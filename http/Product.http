@@ -1,0 +1,36 @@
+### obtaining list of products
+GET http://localhost:8080/product
+Accept: application/json
+Content-Type: application/json
+
+
+### obtaining specific product
+GET http://localhost:8080/product/2
+Accept: application/json
+Content-Type: application/json
+
+### adding new product
+POST http://localhost:8080/product/add
+Accept: application/json
+Content-Type: application/json
+
+{
+  "productId": 3,
+  "name": "tablet",
+  "price": 120.50,
+  "amount": 10,
+  "request": 0,
+  "brand": "Sony",
+  "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv418E5Z241jBDPBwsL0TnccVL6BbwTOdtIw&usqp=CAU"
+}
+
+
+
+### delete specific product
+DELETE http://localhost:8080/product/delete/4
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userId": 2
+}
