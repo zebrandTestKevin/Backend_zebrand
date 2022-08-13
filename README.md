@@ -2,7 +2,7 @@
 
 La demo usa:
 * Maven (gestor de dependencias)
-* Base de datos SQL
+* Base de datos SQL (MySQL versión 5.7)
 * JPA (para conseguir mayor nivel de abstracción sobre la base de datos)
 
 ## Instalar
