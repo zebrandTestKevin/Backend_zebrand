@@ -54,8 +54,8 @@ public class UserControllerTest {
     @Test
     public void postAdmins_success() throws Exception {
         User newAdmin=new User();
-        newAdmin.setMail("perra@gmail.com");
-        newAdmin.setAdminId(12);
+        newAdmin.setMail("prueba@gmail.com");
+        newAdmin.setUserId(12);
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
@@ -65,11 +65,11 @@ public class UserControllerTest {
         Mockito.when(userDao.save(Mockito.any(User.class))).thenReturn(newAdmin);
 
         mockMvc.perform(MockMvcRequestBuilders
-                        .post("/user").content(requestJson)
+                        .post("/user/add").content(requestJson)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.mail", Matchers.is("perra@gmail.com")))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.adminId", Matchers.is(12)));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.mail", Matchers.is("prueba@gmail.com")))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.userId", Matchers.is(12)));
     }
 
 }

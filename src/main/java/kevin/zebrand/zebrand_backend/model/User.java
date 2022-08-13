@@ -21,12 +21,12 @@ public class User {
     public User() {
     }
 
-    public Integer getAdminId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setAdminId(Integer adminId) {
-        this.userId = adminId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getMail() {

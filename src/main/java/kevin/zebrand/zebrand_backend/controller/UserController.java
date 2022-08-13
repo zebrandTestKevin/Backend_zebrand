@@ -5,6 +5,8 @@ import kevin.zebrand.zebrand_backend.model.Product;
 import kevin.zebrand.zebrand_backend.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 
 import javax.print.attribute.standard.Media;
@@ -17,6 +19,7 @@ public class UserController {
 
     @Autowired
     UserDao userDao;
+    private JavaMailSender mailSender;
 
     @GetMapping(path = "/user")
     public List<User> get() throws Exception {
@@ -37,5 +40,7 @@ public class UserController {
         userDao.deleteById(id);
         return "Delete by Id"+id;
     }
+//    @Service
+
 
 }
